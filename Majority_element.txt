@@ -1,0 +1,20 @@
+class Solution:
+    def findMajority(self, arr):
+        # code here
+        l=len(arr)
+        a={}
+        b=[]
+        for n in arr:
+            if n in a:
+                a[n]+=1
+            else:
+                a[n]=1
+        for i in a:
+            num=a[i]
+            if num>l//3:
+                b.append(i)
+        b.sort()
+        return b
+            
+        
+        
