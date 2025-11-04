@@ -1,0 +1,60 @@
+// searching element in the single linked list 
+#include <stdio.h>
+#include <stdlib.h>
+
+// Define the node structure
+struct node {
+    int data;
+    struct node* next;
+};
+struct node* head = NULL;
+// Function to create a new node
+struct node* createNode(int data) {
+    struct node* nn = (struct node*)malloc(sizeof(struct node));
+    if(nn==NULL)
+      exit(1);
+    nn->data=data;
+    nn->next=NULL;
+    
+    return nn;
+    //Write your code
+}
+void insert(int val){
+  struct node* nn=createNode(val);
+  if(head==NULL){
+    head=nn;
+  }else{
+    struct node* t;
+    t=head;
+    while(t->next){
+      t=t->next;
+    }
+    t->next=nn;
+  }
+}
+void searchn(int val){
+  struct node* t=head;
+  int f=0;
+  
+
+  
+  if(f==1)
+    printf("Element found");
+  else
+    printf("Element not found");
+}
+
+
+int main(){
+  int n, val;
+  scanf("%d",&n);
+  for(int i=0;i<n;i++){
+    scanf("%d",&val);
+    insert(val);
+  }
+  int s;
+  scanf("%d",&s);
+  searchn(s);
+  return 0;
+}
+
