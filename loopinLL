@@ -1,0 +1,15 @@
+//detecting the loop in the linked list (flody cycle detection)
+
+bool has_cycle(SinglyLinkedListNode* head) {
+    SinglyLinkedListNode* s=head;
+    SinglyLinkedListNode* f=head;
+    do{
+        if(f==NULL || f->next==NULL)
+            return 0;
+        s=s->next;
+        f=f->next->next;
+    }while(f!=s);
+    return 1;
+
+
+}
